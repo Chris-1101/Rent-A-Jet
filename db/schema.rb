@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_175146) do
 
   create_table "jets", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "model"
     t.string "city"
     t.integer "price_hour"
     t.integer "seats"

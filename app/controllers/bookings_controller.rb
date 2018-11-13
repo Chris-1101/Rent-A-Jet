@@ -24,11 +24,12 @@ class BookingsController < ApplicationController
   end
 
   private
-
   def find_jet
     @jet = Jet.find(params[:jet_id])
   end
 
+
   def booking_params
     params.require(:booking).permit(:duration, :jet_id, :user_id)
   end
+end
