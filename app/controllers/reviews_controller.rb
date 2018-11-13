@@ -7,10 +7,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user = User.find(params[:user_id])
+    @review.user = current_user
     @review.jet = @jet
-
-    if @review.save
+    if @review.save!
       redirect_to jet_path(@jet)
     else
       render :new
