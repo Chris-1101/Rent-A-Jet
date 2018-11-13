@@ -1,2 +1,8 @@
-<h1>Jets#index</h1>
-<p>Find me in app/views/jets/index.html.erb</p>
+<h1>Fly to your wildest limits 🤟</h1>
+<%= @jets.each do |jet| %>
+<%= jet[:name]%>
+<%= jet[:city] %>
+<%= jet[:seats] %>
+<%= jet[:price] %>
+<%= jet[:type] %>
+<% end %>
