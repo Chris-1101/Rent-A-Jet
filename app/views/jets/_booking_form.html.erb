@@ -1,0 +1,7 @@
+<%= simple_form_for([@jet, @booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :destination %>
+  <%= f.input :passengers %>
+  <%= f.submit %>
+<% end %>

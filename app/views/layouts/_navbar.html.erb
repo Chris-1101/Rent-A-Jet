@@ -1,18 +1,37 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to "Home", jets_path, class: "navbar-wagon-brand btn btn-danger" %>
 
-
+  <%= link_to jets_path do %>
+    <img class="img-small" src="https://assets.privejets.com/images/prive-jets-logo-black.jpg"
+    alt="">
+  <% end %>
 
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to "New Booking", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Rent Your Jet", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "About us", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Help", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Sign In", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+
 
 
     <!-- Avatar with dropdown menu -->
+
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://cdn-images-1.medium.com/max/800/1*DChYYPZxxnQb8P9vplA9NQ.jpeg" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
     <!-- TODO with Devise Login -->
     <div class="navbar-wagon-item">
       <div class="dropdown">

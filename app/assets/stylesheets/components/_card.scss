@@ -1,5 +1,5 @@
 .card {
-  height: 250px;
+  height: 300px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -7,4 +7,9 @@
   margin: 2px 0px;
   border-radius:10px;
   border: 1px solid;
+  box-shadow: 0.4px 0.4px;
+}
+
+.row {
+  align-items: center;
 }
