@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .banner h1 {
   font-size: 50px;
@@ -23,5 +24,24 @@
 }
 
 .banner-content {
-  margin-bottom: 800px;
+  position: absolute;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#banner_video {
+  height: 100%;
+  width: 100%;
+}
+
+.banner_button {
+  position: absolute;
+  top: 300px;
+  right: 30px;
+  color: #f1f1f1;
+  width: 40%;
+  height: 50px;
 }
