@@ -23,10 +23,10 @@ class BookingsController < ApplicationController
     redirect_to jet_path(@booking.jet)
   end
 
+  private
   def find_jet
     @jet = Jet.find(params[:jet_id])
   end
-  private
 
 
   def booking_params
