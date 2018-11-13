@@ -21,30 +21,30 @@ user = amine
 
 jet = Jet.create!(name: "FK-232", model: "FK", city: "Los Angeles", price_hour: 200, seats: 3, user_id: 2)
 rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(4), jet_id: jet.id)
+  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(1..4), jet_id: jet.id)
 end
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
 jet = Jet.create!(name: "TX-454" , model: "TX" , city: "Dubai", price_hour: 300 , seats: 4, user_id: 2)
 rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(4), jet_id: jet.id)
+  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(1..4), jet_id: jet.id)
 end
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
 jet = Jet.create!(name: "TJ-454" , model: "TJ" , city: "Paris", price_hour: 700 , seats: 7, user_id: 3)
 rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(4), jet_id: jet.id)
+  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(1..4), jet_id: jet.id)
 end
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
 jet = Jet.create!(name: "KW-454" , model: "KW" , city: "New York", price_hour: 500 , seats: 5, user_id: 1)
 rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(4), jet_id: jet.id)
+  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(1..4), jet_id: jet.id)
 end
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
 jet = Jet.create!(name: "WX-454" , model: "WX" , city: "Madrid", price_hour: 400 , seats: 5, user_id: 4)
 rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(4), jet_id: jet.id)
+  Review.create!(content: "rating here...", rating: rand(5), user_id: rand(1..4), jet_id: jet.id)
 end
 puts " created #{jet.name} and it belongs to #{jet.user}"
