@@ -10,6 +10,16 @@
         <p>Name: <%= @jet.name %></p>
         <p>Model: <%= @jet.model %></p>
         <p>Price: <%= @jet.price_hour %> <em>per hour</em></p>
+        <% total = count = average = 0 %>
+        <% @jet.reviews.each do| review| %>
+          <% total += review.rating %>
+          <% count += 1 %>
+        <% end %>
+        <% average = count == 0 ? 0 : total / count %>
+        Rating: <% average.times do %>
+        <i class="fas fa-star yellow"></i>
+      <% end %>
+
     </div>
     </div>
     <br>
