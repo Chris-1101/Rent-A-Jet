@@ -11,12 +11,15 @@ class BookingsController < ApplicationController
     @booking.jet = @jet
 
     if @booking.save
-      redirect_to jet_bookings_path(@booking)
+      redirect_to jet_booking_path(@booking)
     else
       render :new
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
@@ -28,8 +31,7 @@ class BookingsController < ApplicationController
     @jet = Jet.find(params[:jet_id])
   end
 
-
   def booking_params
-    params.require(:booking).permit(:duration, :jet_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :passengers, :destination, :jet_id, :user_id)
   end
 end
