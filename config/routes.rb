@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :jets do
     resources :reviews, only: [:new, :create]
-    resources :booking, only: [:new, :create]
+    resources :bookings, only: [:new, :create]
   end
   # destroy for booking owner
   resources :booking, only: [:destroy]
