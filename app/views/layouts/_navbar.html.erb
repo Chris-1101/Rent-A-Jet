@@ -1,8 +1,10 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to "Home", jets_path, class: "navbar-wagon-brand btn btn-danger" %>
 
-
+  <%= link_to jets_path do %>
+    <img class="img-small" src="https://assets.privejets.com/images/prive-jets-logo-black.jpg"
+    alt="">
+  <% end %>
 
 
   <!-- Right Navigation -->
