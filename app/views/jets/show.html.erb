@@ -2,13 +2,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-5">
-      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(60,60,60,0.6) 50%), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=500&q=60');">
+      <div class="card" style="background-image: url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=500&q=60');">
       </div>
     </div>
     <div class="col-sm-5">
         <h3>Location: <%= @jet.city %></h3>
-        <h3>Name: <%= @jet.name %></h3>
-        <h3>Model: <%= @jet.model %></h3>
+        <p>Name: <%= @jet.name %></p>
+        <p>Model: <%= @jet.model %></p>
         <p>Price: <%= @jet.price_hour %> <em>per hour</em></p>
     </div>
     </div>
