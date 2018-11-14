@@ -22,9 +22,13 @@
             <div class="flip-card-front">
               <div class="tex">
                 <p> <%= jet.name %> with <%= jet.seats %> seats starting at $<%= jet.price_hour %>/hour </p>
-                <% stars_num = ((jet.reviews.map {|e| e.rating}.sum).to_f / jet.reviews.count).round(2) %>
-                <% stars_num.to_i.times do %>
-                  <i class="fas fa-star yellow"></i>
+                <% if jet.reviews.blank? %>
+                  No Reviews yet!
+                <% else %>
+                  <% stars_num = ((jet.reviews.map {|e| e.rating}.sum).to_f / jet.reviews.count).round(2) %>
+                  <% stars_num.to_i.times do %>
+                    <i class="fas fa-star yellow"></i>
+                  <% end %>
                 <% end %>
                 <!-- <p>Deal: $1,250</p> -->
               </div>
