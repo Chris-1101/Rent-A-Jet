@@ -1,5 +1,6 @@
 class JetsController < ApplicationController
   def index
+    ratings = []
     @jets = Jet.all
   end
 
