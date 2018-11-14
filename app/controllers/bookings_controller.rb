@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.jet = @jet
 
     if @booking.save
-      redirect_to jet_booking_path(@booking)
+      redirect_to jet_booking_path(@jet, @booking)
     else
       render :new
     end
