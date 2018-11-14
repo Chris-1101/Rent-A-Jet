@@ -1,12 +1,12 @@
 <!-- Banner -->
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://4home.ge/wp-content/uploads/2015/07/Article-Name-Image1-e1408397717734.jpg');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.1) 50%), url('http://4home.ge/wp-content/uploads/2015/07/Article-Name-Image1-e1408397717734.jpg');">
 <!--   <div class="banner-content">
  -->    <h1>Fly With Ease, To Your Wildest Limits.</h1>
         <p>Start your flight search</p>
 
 <div class="container">
 <%= form_tag jets_path, method: :get do %>
-<div class="row">
+<div class="row v-align">
 <div class="col-xs-12 col-sm-3">
 
   <%= text_field_tag :query,
@@ -34,8 +34,10 @@
   %>
 </div>
 
-  <div class="col-xs-12 col-sm-3 col-sm-offset-8">
-  <%= submit_tag "Search flights", class: "search-homepage-button" %>
+  <div class="col-xs-12 col-sm-3 col-sm-offset-7">
+
+  <%= submit_tag "Search flights", class: "btn btn-primary search-homepage-button" %>
+
 
   </div>
 
