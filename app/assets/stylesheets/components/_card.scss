@@ -1,10 +1,11 @@
 .card {
   height: 300px;
-  padding: 20px;
+  width: 500px;
+  padding: 50px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 2px 0px;
+  margin-top: 20px;
   border-radius:10px;
   border: 1px solid;
   box-shadow: 0.4px 0.4px;
@@ -16,3 +17,11 @@
 .yellow {
   color: #CABD65;
 }
+
+.container{
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
+
+}
+
+
