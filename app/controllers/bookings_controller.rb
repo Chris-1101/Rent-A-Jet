@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :find_jet, only: [:new, :create]
+  before_action :find_jet, only: [:new, :create, :show]
+  before_action :find_booking, only: [:show, :destroy]
 
   def new
     @booking = Booking.new
@@ -11,24 +12,28 @@ class BookingsController < ApplicationController
     @booking.jet = @jet
 
     if @booking.save
-      redirect_to jet_booking_path(@booking)
+      redirect_to jet_booking_path(@jet, @booking)
     else
       render :new
     end
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
+
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to jet_path(@booking.jet)
   end
 
   private
+
   def find_jet
     @jet = Jet.find(params[:jet_id])
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
