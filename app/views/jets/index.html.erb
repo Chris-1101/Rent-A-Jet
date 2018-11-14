@@ -10,24 +10,24 @@
     <h1>Luxury Jets</h1>
   </div>
 </div>
-  <div id="trump">
+<div id="trump">
   <div class="container">
     <div class="row">
       <% @jets.each do |jet| %>
-        <div class="col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://mk0runwaygirl0t0gjwt.kinstacdn.com/wp-content/uploads/2016/08/Global-Express-800x415.jpg');">
-          <div class="card-category">Recent</div>
-          <div class="card-description">2 seats left!</div>
-          <a class="card-link" href="#" ></a>
-        </div>
-          <p> <%= jet.name %> with <%= jet.seats %> seats starting at $<%= jet.price_hour %> </p>
-          <p><i class="fas fa-star"> 85%</i></p>
-          <p>Deal: $1,250</p>
-          <p></p>
-          <p></p>
-         </div>
+          <div class="col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://mk0runwaygirl0t0gjwt.kinstacdn.com/wp-content/uploads/2016/08/Global-Express-800x415.jpg');">
+              <div class="card-category">Recent</div>
+              <div class="card-description">2 seats left!</div>
+              <a class="card-link" href="#" ></a>
+            </div>
+            <p> <%= jet.name %> with <%= jet.seats %> seats starting at $<%= jet.price_hour %> </p>
+            <p><i class="fas fa-star"> 85%</i></p>
+            <p>Deal: $1,250</p>
+            <%= link_to jet_path(jet) do %>
+              <div class="link"></div>
+            <% end %>
+          </div>
       <% end %>
-      </div>
     </div>
   </div>
 </div>
