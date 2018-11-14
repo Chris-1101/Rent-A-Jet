@@ -1,36 +1,49 @@
-<div class="banner">
+
+<div class="jets-banner">
   <video id="banner_video" src="<%= image_path 'banner_video' %>" type="video/mp4" autoplay loop muted >
   </video>
   <div class="banner_button">
-    <h1>Amine and Alex were here</h1>
-    <p>They will be missed.</p>
-    <button class="btn-primary">Click Me</button>
+    <h1>Find the flight of your dreams!</h1>
+    <a href="#trump"><img src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_arrow_drop_down_48px-512.png" alt="" style="height: 150px"></a>
   </div>
-  <div class="banner-content">
-    <h1>Luxury Jets</h1>
+  <div class="jets-banner-content">
+    <h1>Select a Luxury Jet!</h1>
   </div>
 </div>
 <div id="trump">
   <div class="container">
     <div class="row">
       <% @jets.each do |jet| %>
-          <div class="col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://mk0runwaygirl0t0gjwt.kinstacdn.com/wp-content/uploads/2016/08/Global-Express-800x415.jpg');">
-              <div class="card-category">Recent</div>
-              <div class="card-description">2 seats left!</div>
-              <a class="card-link" href="#" ></a>
+      <div class="col-sm-4">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="tex">
+                <p> <%= jet.name %> with <%= jet.seats %> seats starting at $<%= jet.price_hour %>/hour </p>
+                <% stars_num = ((jet.reviews.map {|e| e.rating}.sum).to_f / jet.reviews.count).round(2) %>
+                <% stars_num.to_i.times do %>
+                  <i class="fas fa-star yellow"></i>
+                <% end %>
+                <!-- <p>Deal: $1,250</p> -->
+              </div>
             </div>
-            <p> <%= jet.name %> with <%= jet.seats %> seats starting at $<%= jet.price_hour %> </p>
-            <p><i class="fas fa-star"> 85%</i></p>
-            <p>Deal: $1,250</p>
             <%= link_to jet_path(jet) do %>
-              <div class="link"></div>
+            <div class="flip-card-back">
+              <h1>What People had to say About this..</h1>
+              <h3>"From far the best investment I've ever made in my life."</h3>
+              <p>November 12th, 2018</p>
+              <p> <img src="https://cdnfr1.img.sputniknews.com/images/102942/26/1029422674.jpg" class="musk-avatar"  data-toggle="dropdown">                   -Poutine</p>
+            </div>
             <% end %>
           </div>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
+
+
 
 
 
