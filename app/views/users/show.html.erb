@@ -1,0 +1,11 @@
+<div class="container">
+<h2><em>Your Bookings</em></h2>
+  <blockquote>
+<% @bookings.each do |booking| %>
+  <h3> You're heading to <strong><%= booking.destination %><strong></h3>
+   <h3>And you're travelling with <strong><%= booking.passengers %></strong> passengers</h3>
+   <h3><%= booking.start_date %> - <%= booking.end_date %></h3>
+
+  <% end %>
+  </blockquote>
+</div>

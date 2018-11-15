@@ -24,14 +24,11 @@ if (mapElement) {
   // [ ... ]
 
   if (markers.length === 0) {
-    console.log(markers.length)
     map.setZoom(1);
   } else if (markers.length === 1) {
-    console.log(markers.length)
     map.setZoom(14);
     map.setCenter([markers[0].lng, markers[0].lat]);
   } else {
-    console.log(markers.length)
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach((marker) => {
       bounds.extend([marker.lng, marker.lat]);
