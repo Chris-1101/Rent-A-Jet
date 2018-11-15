@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Rent-A-Jet</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag "map" %>
@@ -17,7 +17,7 @@
 
     <%= render 'layouts/flashes' %>
     <%= yield %>
-    
+
     <% unless params[:action] == "home" && params[:controller] == "pages" %>
       <%= render 'layouts/footer' %>
     <% end %>
