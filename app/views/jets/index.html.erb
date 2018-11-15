@@ -1,4 +1,3 @@
-
 <div class="jets-banner">
   <video id="banner_video" src="<%= image_path 'banner_video.mp4' %>" type="video/mp4" autoplay loop muted >
   </video>
@@ -9,19 +8,36 @@
 
   </div>
   <div class="jets-banner-content">
-    <h1>Select a Luxury Jet!</h1>
+    <h1>Search Results</h1>
   </div>
 </div>
-<div id="trump">
-  <div class="container">
+<div class="main-container">
+
+  <div class="left">
     <div class="row">
-      <% @jets.each do |jet| %>
-      <div class="col-sm-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <div class="tex">
-                <p> <%= jet.name %> with <%= jet.seats %> seats starting at $<%= jet.price_hour %>/hour </p>
+      <% @jets.reverse.each do |jet| %>
+        <div class="col-sm-6">
+          <div class="jet-card">
+            <% if jet.photo? %>
+            <%= link_to jet_path(jet) do %>
+              <div class="top" style="background-image: url('<%= cl_image_path jet.photo, height: 300, width: 400 %>');background-size: cover; height: 220px;">
+
+              </div>
+              <% end %>
+            <% else %>
+            <%= link_to jet_path(jet) do %>
+              <div class="top" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(60,60,60,0.6) 50%), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=450&h=300&q=60'); height: 220px;">
+              </div>
+              <% end %>
+           <% end %>
+            <div class="bottom">
+              <div class="jetname">
+                <%= jet.name %>
+              </div>
+                <em><%= jet.city %></em>
+                <p><strong>£<%= jet.price_hour %></strong> per hour</p>
+
+              <div class="stars">
                 <% if jet.reviews.blank? %>
                   No Reviews yet!
                 <% else %>
@@ -30,26 +46,19 @@
                     <i class="fas fa-star yellow"></i>
                   <% end %>
                 <% end %>
-                <!-- <p>Deal: $1,250</p> -->
               </div>
             </div>
-            <%= link_to jet_path(jet) do %>
-            <div class="flip-card-back">
-              <h1>What People had to say About this..</h1>
-              <h3>"From far the best investment I've ever made in my life."</h3>
-              <p>November 12th, 2018</p>
-              <p> <img src="https://cdnfr1.img.sputniknews.com/images/102942/26/1029422674.jpg" class="musk-avatar"  data-toggle="dropdown">                   -Poutine</p>
-            </div>
-            <% end %>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
+  <div class="right">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 720px;"
+      data-markers="<%= @markers.to_json %>">
+    </div>
+  </div>
 </div>
-
-
-
-
-

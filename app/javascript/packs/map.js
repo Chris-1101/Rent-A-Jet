@@ -33,7 +33,7 @@ if (mapElement) {
     markers.forEach((marker) => {
       bounds.extend([marker.lng, marker.lat]);
     });
-    map.fitBounds(bounds, { duration: 5000, padding: 75 })
+    map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
 }
 }
