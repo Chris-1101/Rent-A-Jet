@@ -22,6 +22,10 @@ body {
   background-image: url('splash_text.jpg');
   background-size: cover;
 }
+.avatar {
+  width: 30px;
+  border-radius: 50%;
+}
 
 .home-nav {
   display: flex;
