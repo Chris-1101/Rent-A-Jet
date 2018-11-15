@@ -4,8 +4,10 @@
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to 'Rent a jet', jets_path %>
-      <%= link_to "Bookings", "#" %>
+
+      <%= link_to 'Rent a jet', jets_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to 'Rent your jet', new_jet_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
