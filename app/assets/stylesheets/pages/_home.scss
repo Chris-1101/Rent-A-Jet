@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
+
+@font-face {
+font-family: 'Sackers Gothic';
+src: url('fonts/sackers_gothic_medium-webfont.woff2') format('woff2'),
+     url('fonts/sackers_gothic_medium-webfont.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+$home-white: rgba(255, 255, 255, 0.9);
+$home-black: rgba(0, 0, 0, 0.7);
+
+body {
+  margin: 0;
+}
+
+.home-banner {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('splash_text.jpg');
+  background-size: cover;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+.home-nav img {
+  width: 200px;
+  height: auto;
+  vertical-align: -7px;
+}
+
+.home-nav a {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 17px;
+  color: $home-white;
+  text-decoration: none;
+  border-bottom: 3px double transparent;
+}
+
+.home-nav a:hover {
+  border-bottom: 3px double $home-white;
+}
+
+.home-navbar {
+  transition: all 0.3s ease;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-avatar {
+  display: inline-block;
+  width: 30px !important;
+  border-radius: 50%;
+}
+
+.home-search {
+  position: absolute;
+  bottom: 30%;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.home-search form {
+  display: flex;
+}
+
+.home-search label {
+  display: block;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: $home-white;
+  text-shadow:1px 1px 3px $home-black;
+}
+
+.home-search input {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #EEE;
+  border-radius: 0;
+  opacity: 1;
+}
+
+.home-search input:focus {
+  opacity: 1;
+}
+
+#home-from input {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#home-from input,
+#home-to input,
+#home-depart input,
+#home-return input {
+  border-right-color: transparent;
+}
+
+#home-depart, #home-return {
+  width: 130px;
+}
+
+#home-passengers input {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.home-submit {
+  padding: 8px 15px;
+  font-size: 13px;
+  color: $home-white;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: $home-black;
+}
+
+.home-submit:hover {
+  background-color: black;
+}
+
+.home-submit i {
+  margin-right: 5px;
+}
