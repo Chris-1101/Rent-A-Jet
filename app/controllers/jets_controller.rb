@@ -3,6 +3,14 @@ class JetsController < ApplicationController
   def index
     ratings = []
     @jets = Jet.all
+     @jets = Jet.where.not(latitude: nil, longitude: nil)
+
+    @markers = @jets.map do |jet|
+      {
+        lng: jet.longitude,
+        lat: jet.latitude
+      }
+    end
   end
 
   def show
