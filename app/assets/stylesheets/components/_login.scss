@@ -116,7 +116,7 @@ text-shadow:0 1px 2px rgba(0,0,0,.1);
     margin-bottom: 5px;
     font-weight: bold;
     color: white
-  }
+}
 
 .login-title {
     font-size: 45px;
@@ -131,16 +131,18 @@ text-shadow:0 1px 2px rgba(0,0,0,.1);
   height: 20px;
 }
 
-*/
 .form-inputs {
   box-sizing: border-box;
   margin-top: 15px;
 }
 
-a {
+#page-login a {
   color: #f4f4f4;
   text-decoration: none;
-  margin-bottom: 30px;
+
+  &:hover {
+    color: #469AE0;
+  }
 }
 
 .login-title  {
@@ -180,7 +182,7 @@ a {
   color: white;
 }
 
-.img-start{
+.img-start {
   background-image: url(http://footage.framepool.com/shotimg/qf/118297742-london-heathrow-airport-air-transport-airliner-taking-off.jpg);
   background-size: cover;
   background-repeat: no-repeat;
