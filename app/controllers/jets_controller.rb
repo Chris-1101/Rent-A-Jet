@@ -7,6 +7,14 @@ class JetsController < ApplicationController
   def show
     @jet = Jet.find(params[:id])
     @booking = Booking.new
+    @jets = Jet.where.not(latitude: nil, longitude: nil)
+
+    @markers = @jets.map do |jet|
+      {
+        lng: jet.longitude,
+        lat: jet.latitude
+      }
+    end
   end
 
   def new

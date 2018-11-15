@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.jet = @jet
     if @review.save!
-      redirect_to jet_path(@jet)
+      redirect_to jet_path(@jet, @review)
     else
       render :new
     end
