@@ -16,12 +16,10 @@
             <%= f.input :remember_me,
             class: "checkbox-style",
             as: :boolean if devise_mapping.rememberable? %>
+            <%= f.submit %>
           </div>
 
-          <div class="form-action">
-            <%= link_to "Log In", '',  class: "log-in-btn btn btn-primary btn-lg"  %>
-          </div>
-          <% end %>
+        <% end %>
 
           <%= render "devise/shared/links" %>
         </div>
