@@ -1,17 +1,36 @@
 <div class="container">
-<h2><em>Your Bookings</em></h2>
-  <blockquote>
-<% @bookings.each do |booking| %>
-  <h3> You're heading to <strong><%= booking.destination %><strong></h3>
-   <h3>And you're travelling with <strong><%= booking.passengers %></strong> passengers</h3>
-   <h3><%= booking.start_date %> - <%= booking.end_date %></h3>
-
+  <div class="col-xs-12 col-sm-6">
+    <h2><em>Your Bookings</em></h2>
+    <blockquote>
+      <% @bookings.each do |booking| %>
+         <h5> You're heading to <strong><%= booking.destination %></strong></h5>
+         <h5>And you're travelling with <strong><%= booking.passengers %></strong> passengers</h5>
+         <h5>From <%= booking.start_date %> - to <%= booking.end_date %></h5>
+      <% end %>
+    </blockquote>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+  <h2><em>Your jets</em></h2>
+  <% @jets.each do |jet| %>
+    <h5>Name of Jet: <%= jet.name %></h5>
+    <h5>Model: <%= jet.model %></h5>
+    <h5>Price per hour: <%= jet.price_hour %></h5>
+    <h5>City: <%= jet.city %></h5>
+    <% if jet.photo? %>
+      <div class="card" style="background-image: url('<%= cl_image_path jet.photo, height: 300, width: 400 %>');background-size: cover;">
+      </div>
+    <% else %>
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(60,60,60,0.6) 50%), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=500&q=60');">
+      </div>
+    <% end %>
   <% end %>
-  </blockquote>
+  </div>
+</div>
+
+
 
   <% @jets.each do |jet| %>
   <h3> <%= jet.name %></h3>
     <% end %>
 
 
-</div>
