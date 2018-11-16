@@ -46,7 +46,7 @@ class JetsController < ApplicationController
 
   def update
     @jet = Jet.find(params[:id])
-    if @jet.save(jet_params)
+    if @jet.update!(jet_params)
       redirect_to jet_path(@jet)
     else
       render :new
@@ -55,8 +55,11 @@ class JetsController < ApplicationController
 
   def destroy
     @jet = Jet.find(params[:id])
+    @user = @jet.user
+    @jet.reviews.each { |r| r.destroy }
+    @jet.bookings.each { |b| b.destroy }
     @jet.destroy
-    redirect_to jets_path
+    redirect_to user_path(@user)
   end
 
   def jet_params

@@ -16,6 +16,11 @@
     <h5>Model: <%= jet.model %></h5>
     <h5>Price per hour: <%= jet.price_hour %></h5>
     <h5>City: <%= jet.city %></h5>
+    <div class="edit-remove-button">
+      <%= link_to "Edit", edit_jet_path(jet) %> |
+
+      <%= link_to "Remove", jet_path(jet), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
     <% if jet.photo? %>
       <div class="card" style="background-image: url('<%= cl_image_path jet.photo, height: 300, width: 400 %>');background-size: cover;">
       </div>
