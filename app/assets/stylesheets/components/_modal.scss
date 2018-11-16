@@ -1,0 +1,25 @@
+#modal-signup,
+#modal-login {
+  opacity: 0.95;
+}
+
+.modal-dialog {
+  border-radius: 5px;
+}
+
+.modal-header {
+  display: flex;
+  // justify-content: space-between;
+}
+
+.modal-link {
+  font-size: 14px;
+}
+
+#modal-login .close {
+  margin-left: 500px;
+}
+
+#modal-signup .close {
+  margin-left: 490px;
+}
