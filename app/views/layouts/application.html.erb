@@ -16,7 +16,10 @@
     <% end %>
 
     <%= render 'layouts/flashes' %>
+
     <%= yield %>
+
+    <%= render 'layouts/user_modals' %>
 
     <% unless params[:action] == "home" && params[:controller] == "pages" %>
       <%= render 'layouts/footer' %>
