@@ -34,6 +34,9 @@
             <div class="index-card-text">
               <h3><%= jet.name %></h3>
               <h6>£<%= jet.price_hour %> per hour</h6>
+              <% if jet.user == current_user %>
+              <h6><em> This is your Jet!</em></h6>
+              <% else %>
               <% if jet.reviews.blank? %>
                   <p>No Reviews yet!<p>
               <% else %>
@@ -43,6 +46,7 @@
                     <i class="fas fa-star yellow"></i>
                   <% end %>
                 </div>
+              <% end %>
               <% end %>
             </div>
           </div>

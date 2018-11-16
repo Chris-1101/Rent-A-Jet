@@ -5,16 +5,16 @@
         <% if @jet.photo? %>
        <div class="card" style="background-image: url('<%= cl_image_path @jet.photo, height: 300, width: 400 %>');background-size: cover;">
       <% else %>
-       <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(60,60,60,0.6) 50%), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=500&q=60');">
+       <div class="card" style="background-image: url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=500&q=60');">
       <% end %>
       </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <h3>Location: <%= @jet.city %></h3>
-        <p>Name: <%= @jet.name %></p>
-        <p>Model: <%= @jet.model %></p>
-        <p>Price: <%= @jet.price_hour %> <em>per hour</em></p>
+      <h5><strong>Location:</strong><%= @jet.city %></h5>
+        <h5><strong>Name:</strong> <%= @jet.name %></h5>
+        <h5><strong>Model:</strong> <%= @jet.model %></h5>
+        <h5><strong>Price:</strong> £<%= @jet.price_hour %> <em>per hour</em></h5>
         <% total = count = average = 0 %>
         <% @jet.reviews.each do| review| %>
           <% total += review.rating %>
