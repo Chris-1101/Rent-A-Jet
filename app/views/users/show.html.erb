@@ -1,16 +1,48 @@
-<div class="container">
-  <div class="col-xs-12 col-sm-6">
-    <h2><em>Your Bookings</em></h2>
-    <blockquote>
-      <% @bookings.each do |booking| %>
-         <h5> You're heading to <strong><%= booking.destination %></strong></h5>
-         <h5>And you're travelling with <strong><%= booking.passengers %></strong> passengers</h5>
-         <h5>From <%= booking.start_date %> - to <%= booking.end_date %></h5>
-      <% end %>
-    </blockquote>
+<div class="tickets">
+  <% @bookings.each do |booking| %>
+  <div class="ticket">
+    <div class="stub">
+      <div class="top">
+        <span class="admit">Admit</span>
+        <span class="line"></span>
+        <span class="num">
+          Booking-Nr
+          <span>31415926</span>
+        </span>
+      </div>
+      <div class="number">1</div>
+      <div class="invite">
+        Boarding Pass
+      </div>
+    </div>
+    <div class="check">
+      <div class="route">
+        <span class="big"><%= booking.jet.city %></span>
+         <span class="plane"><?xml version="1.0" ?><svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><g stroke="#222"><line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390"/><path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10"/></g></svg></span>
+          <span class="big"><%= booking.destination.capitalize %></span>
+      </div>
+      <div class="number">Seat: <%= (0..booking.jet.seats-1).to_a.sample+1%> <%= %w(A B C D E F).sample %>
+      </%></div>
+      <div class="info">
+        <section>
+          <div class="title">Date</div>
+          <div><%= booking.created_at %></div>
+        </section>
+        <section>
+          <div class="title">Issued By</div>
+          <div>Rent-A-Jet</div>
+        </section>
+        <section>
+          <div class="title">Booking Nr</div>
+          <div>31415926</div>
+        </section>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-6">
-  <h2><em>Your jets</em></h2>
+  <% end %>
+</div>
+
+<div class="container">
   <% @jets.each do |jet| %>
     <h5>Name of Jet: <%= jet.name %></h5>
     <h5>Model: <%= jet.model %></h5>

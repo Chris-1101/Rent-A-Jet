@@ -11,8 +11,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <% if @jet.user != current_user %>
-        <h3>Location: <%= @jet.city %></h3>
+      <h3>Location: <%= @jet.city %></h3>
         <p>Name: <%= @jet.name %></p>
         <p>Model: <%= @jet.model %></p>
         <p>Price: <%= @jet.price_hour %> <em>per hour</em></p>
@@ -25,7 +24,7 @@
         Rating: <% average.times do %>
         <i class="fas fa-star yellow"></i>
       <% end %>
-      <% else %>
+      <% if @jet.user == current_user %>
       <h4> This is your Jet!</h4>
       <i class="fas fa-plane"></i>
       <%= link_to 'Go Back to Listings', jets_path %>
