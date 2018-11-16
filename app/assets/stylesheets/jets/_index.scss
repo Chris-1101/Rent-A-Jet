@@ -1,7 +1,8 @@
 @import "show";
 
-.main-container {
+#main-container {
   display: flex;
+  margin-top: 10px;
 }
 
 .jet-card {
@@ -27,3 +28,4 @@
   position: sticky !important;
   top: 0px !important;
 }
+

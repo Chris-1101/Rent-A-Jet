@@ -11,8 +11,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
-
-        <h3>Location: <%= @jet.city %></h3>
+      <h3>Location: <%= @jet.city %></h3>
         <p>Name: <%= @jet.name %></p>
         <p>Model: <%= @jet.model %></p>
         <p>Price: <%= @jet.price_hour %> <em>per hour</em></p>
@@ -25,6 +24,11 @@
         Rating: <% average.times do %>
         <i class="fas fa-star yellow"></i>
       <% end %>
+      <% if @jet.user == current_user %>
+      <h4> This is your Jet!</h4>
+      <i class="fas fa-plane"></i>
+      <%= link_to 'Go Back to Listings', jets_path %>
+      <% end %>
     </div>
     </div>
     <div class="col-xs-12 col-sm-6">
@@ -36,15 +40,20 @@
             <i class="fas fa-plane"></i>
     <%= link_to 'Go Back to Listings', jets_path %>
     </div>
+    <% if @jet.user != current_user %>
   <div class="col-xs-12 col-sm-6">
     <%= render "booking_form" %>
   </div>
+  <% else %>
+  <div class="col-xs-12 col-sm-6">
   <div
     id="map"
     style="width: 100%;
     height: 600px;"
     data-markers="<%= @markers.to_json %>">
   </div>
+  </div>
+  <% end %>
   </div>
 </div>
 </div>
