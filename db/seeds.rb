@@ -19,74 +19,50 @@ puts " created user Natasha"
 # user = User.all.where(email: "amine@gmail.com")
 user = amine
 
-jet = Jet.create!(name: "Gulfstream G650ER", model: "GS", city: "London", price_hour: 3166, seats: 19, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
+jet = Jet.create!(name: "Learjet" , model: "LJ-45" , city: "San Diego International Airport", price_hour: 2400 , seats: 12, user_id: 1)
+Review.create!(content: "Very comfortable", rating: 3, user_id: 1, jet_id: jet.id)
+Review.create!(content: "There was no caviar", rating: 1, user_id: 3, jet_id: jet.id)
+Review.create!(content: "Everything was included", rating: 4, user_id: 1, jet_id: jet.id)
+Review.create!(content: "Sat next to a fat guy, seats not wide enough", rating: 1, user_id: 2, jet_id: jet.id)
+Review.create!(content: "The spa was not big enough", rating: 3, user_id: 3, jet_id: jet.id)
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
-jet = Jet.create!(name: "FK-232", model: "FK", city: "Los Angeles", price_hour: 2200, seats: 13, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
+jet = Jet.create!(name: "HondaJet" , model: "HA-420" , city: "Long Beach Airport", price_hour: 4700 , seats: 6, user_id: 1)
+Review.create!(content: "Very comfortable", rating: 5, user_id: 1, jet_id: jet.id)
+Review.create!(content: "There was no caviar", rating: 2, user_id: 3, jet_id: jet.id)
+Review.create!(content: "Everything was included", rating: 4, user_id: 1, jet_id: jet.id)
+Review.create!(content: "Sat next to a fat guy, seats not wide enough", rating: 1, user_id: 2, jet_id: jet.id)
+Review.create!(content: "The spa was not big enough", rating: 3, user_id: 3, jet_id: jet.id)
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
-jet = Jet.create!(name: "TX-454" , model: "TX" , city: "Dubai", price_hour: 1300 , seats: 14, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
+jet = Jet.create!(name: "Gulfstream", model: "G650ER", city: "Los Angeles International Airport", price_hour: 6000, seats: 19, user_id: 4)
+Review.create!(content: "Very comfortable", rating: 5, user_id: 1, jet_id: jet.id)
+Review.create!(content: "There was no caviar", rating: 2, user_id: 3, jet_id: jet.id)
+Review.create!(content: "Everything was included", rating: 4, user_id: 1, jet_id: jet.id)
+Review.create!(content: "Sat next to a fat guy, seats not wide enough", rating: 1, user_id: 2, jet_id: jet.id)
+Review.create!(content: "The spa was not big enough", rating: 3, user_id: 3, jet_id: jet.id)
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
-jet = Jet.create!(name: "TJ-454" , model: "TJ" , city: "Paris", price_hour: 4700 , seats: 17, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
+jet = Jet.create!(name: "Dassault Falcon", model: "8X", city: "John Wayne Airport", price_hour: 4200, seats: 14, user_id: 2)
+Review.create!(content: "Very comfortable", rating: 5, user_id: 1, jet_id: jet.id)
+Review.create!(content: "There was no caviar", rating: 2, user_id: 3, jet_id: jet.id)
+Review.create!(content: "Everything was included", rating: 4, user_id: 1, jet_id: jet.id)
+Review.create!(content: "Sat next to a fat guy, seats not wide enough", rating: 1, user_id: 2, jet_id: jet.id)
+Review.create!(content: "The spa was not big enough", rating: 3, user_id: 3, jet_id: jet.id)
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
-jet = Jet.create!(name: "KW-454" , model: "KW" , city: "New York", price_hour: 2500 , seats: 15, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
+jet = Jet.create!(name: "Beechcraft Hawker" , model: "N796RM" , city: "San Francisco International Airport", price_hour: 5300 , seats: 14, user_id: 3)
+Review.create!(content: "Very comfortable", rating: 5, user_id: 1, jet_id: jet.id)
+Review.create!(content: "There was no caviar", rating: 2, user_id: 3, jet_id: jet.id)
+Review.create!(content: "Everything was included", rating: 4, user_id: 1, jet_id: jet.id)
+Review.create!(content: "Sat next to a fat guy, seats not wide enough", rating: 1, user_id: 2, jet_id: jet.id)
+Review.create!(content: "The spa was not big enough", rating: 3, user_id: 3, jet_id: jet.id)
 puts " created #{jet.name} and it belongs to #{jet.user}"
 
-jet = Jet.create!(name: "WX-454" , model: "WX" , city: "Madrid", price_hour: 2400 , seats: 15, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
-puts " created #{jet.name} and it belongs to #{jet.user}"
-
-jet = Jet.create!(name: "Gulfstream G280", model: "FK", city: "Barcelona", price_hour: 3200, seats: 13, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
-puts " created #{jet.name} and it belongs to #{jet.user}"
-
-jet = Jet.create!(name: "FX-237", model: "FX", city: "Seoul", price_hour: 4100, seats: 12, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
-puts " created #{jet.name} and it belongs to #{jet.user}"
-
-jet = Jet.create!(name: "JD-348", model: "JD", city: "Tokyo", price_hour: 3400, seats: 13, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
-puts " created #{jet.name} and it belongs to #{jet.user}"
-
-jet = Jet.create!(name: "GS-450", model: "GS", city: "Shanghai", price_hour: 2100, seats: 21, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
-puts " created #{jet.name} and it belongs to #{jet.user}"
-
-jet = Jet.create!(name: "HT-234", model: "HT", city: "Netanya", price_hour: 3200, seats: 13, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
-puts " created #{jet.name} and it belongs to #{jet.user}"
-
-jet = Jet.create!(name: "FK-972", model: "FK", city: "Vienna", price_hour: 4200, seats: 14, user_id: rand(1..4))
-rand(5).times do
-  Review.create!(content: "rating here...", rating: rand(3..5), user_id: rand(1..4), jet_id: jet.id)
-end
+jet = Jet.create!(name: "Mini Concorde" , model: "MC-X41" , city: "San Jose International Airport", price_hour: 7300 , seats: 20, user_id: 4)
+Review.create!(content: "Very comfortable", rating: 5, user_id: 2, jet_id: jet.id)
+Review.create!(content: "Incredible service", rating: 5, user_id: 3, jet_id: jet.id)
+Review.create!(content: "Champagne was amazing ", rating: 5, user_id: 1, jet_id: jet.id)
+Review.create!(content: "Everything was included", rating: 5, user_id: 2, jet_id: jet.id)
+Review.create!(content: "Brilliant spa and sauna", rating: 5, user_id: 3, jet_id: jet.id)
 puts " created #{jet.name} and it belongs to #{jet.user}"
