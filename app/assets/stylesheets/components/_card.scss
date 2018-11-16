@@ -18,6 +18,7 @@
 
 .yellow {
   color: #CABD65;
+  font-size: 10px;
 }
 
 .container{
@@ -35,4 +36,31 @@
 
 .row_form{
   text-align: center;
+}
+
+.index-card {
+  margin: 0 10px;
+  border-radius: 20px;
+}
+.index-card-image {
+  border-radius: 3px;
+}
+
+.index-card-text {
+  h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  h6 {
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+.star-holder {
+  margin-top: -7px;
 }

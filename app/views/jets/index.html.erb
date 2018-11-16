@@ -8,7 +8,7 @@
 
   </div>
   <div class="jets-banner-content">
-    <h1>Search Results</h1>
+
   </div>
 </div>
 <div id="main-container">
@@ -17,38 +17,36 @@
     <div class="row">
       <% @jets.reverse.each do |jet| %>
         <div class="col-sm-6">
-          <div class="jet-card">
-            <% if jet.photo? %>
+          <div class="index-card">
             <%= link_to jet_path(jet) do %>
-              <div class="top" style="background-image: url('<%= cl_image_path jet.photo, height: 300, width: 400 %>');background-size: cover; height: 220px;">
-
+              <% if jet.photo? %>
+              <%= link_to jet_path(jet) do %>
+                <div class="index-card-image" style="background-image: url('<%= cl_image_path jet.photo, height: 300, width: 400 %>');background-size: cover; height: 220px;">
+                </div>
+                <% end %>
+              <% else %>
+            <%= link_to jet_path(jet) do %>
+              <div class="index-card-image" style="background-image: url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=450&h=300&q=60'); height: 220px;">
               </div>
               <% end %>
-            <% else %>
-            <%= link_to jet_path(jet) do %>
-              <div class="top" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(60,60,60,0.6) 50%), url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cdc84c9290e90088f8ab78270ee1ffdf&auto=format&fit=crop&w=450&h=300&q=60'); height: 220px;">
-              </div>
-              <% end %>
-           <% end %>
-            <div class="bottom">
-              <div class="jetname">
-                <%= jet.name %>
-              </div>
-                <em><%= jet.city %></em>
-                <p><strong>£<%= jet.price_hour %></strong> per hour</p>
-
-              <div class="stars">
-                <% if jet.reviews.blank? %>
-                  No Reviews yet!
-                <% else %>
+            <% end %>
+            <% end %>
+            <div class="index-card-text">
+              <h3><%= jet.name %></h3>
+              <h6>£<%= jet.price_hour %> per hour</h6>
+              <% if jet.reviews.blank? %>
+                  <p>No Reviews yet!<p>
+              <% else %>
+                <div class="star-holder">
                   <% stars_num = ((jet.reviews.map {|e| e.rating}.sum).to_f / jet.reviews.count).round(2) %>
                   <% stars_num.to_i.times do %>
                     <i class="fas fa-star yellow"></i>
                   <% end %>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             </div>
           </div>
+
         </div>
       <% end %>
     </div>
