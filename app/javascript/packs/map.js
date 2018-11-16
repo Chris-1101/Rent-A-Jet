@@ -5,23 +5,23 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const mapElement = document.getElementById('map');
 
-if (mapElement) {
-  mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+if (mapElement) { // only build a map if there's a div#map to inject into
+  mapboxgl.accessToken = process.env.MAPBOX_API_KEY; // API key from `.env`
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10'
   });
-if (mapElement) {
-// [ ... ]
+
   const markers = JSON.parse(mapElement.dataset.markers);
 
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([marker.lng, marker.lat])
-      .addTo(map);
-  })
-if (mapElement) {
-  // [ ... ]
+  markers.forEach(function(marker) {
+    var el = document.createElement('div');
+    el.className = 'ben-test';
+
+    new mapboxgl.Marker(el)
+        .setLngLat([marker.lng, marker.lat])
+        .addTo(map);
+  });
 
   if (markers.length === 0) {
     map.setZoom(1);
@@ -36,12 +36,5 @@ if (mapElement) {
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
 }
-}
-if (mapElement) {
-  // [ ... ]
-  map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
-  }));
-}
-}
+
 
