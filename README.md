@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Rent-a-Jet
+
+![rentajet](https://user-images.githubusercontent.com/28808441/49532287-76794800-f8bc-11e8-80e0-44a2fb539f50.png)
